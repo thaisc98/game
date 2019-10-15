@@ -11,13 +11,11 @@ public class AppConfig {
         //bena methods
     @Bean
     public numberGenerator numberGenerator(){
-
         return new numberGeneratorI();
     }
 
     @Bean
     public Game game(){
-
         return new GameI();
     }
 

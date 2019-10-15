@@ -1,5 +1,9 @@
-package learning.springfive;
+package academy.learnprogramming.console;
 
+import learning.springfive.AppConfig;
+import learning.springfive.Game;
+import learning.springfive.MessageGeneratorI;
+import learning.springfive.numberGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -36,5 +40,7 @@ public class Main {
             log.info("getMainMessage = {}", msgG.getMainMessage());
             log.info("getResultMessage={}",msgG.getResultMessage());
         context.close();
+
+
     }
 }
