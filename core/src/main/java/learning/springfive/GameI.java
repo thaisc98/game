@@ -17,7 +17,10 @@ public class GameI implements Game {
     //fields
     @Autowired
     private numberGenerator num;
-    private int guessCount = 5;
+
+    @Autowired
+    @GuessCount
+    private int guessCount;
     private int number;
     private int guess;
     private int smallest;
@@ -25,17 +28,15 @@ public class GameI implements Game {
     private int remainingGuesses;
     private boolean validNumberRange = true;
 
-
     // init method
     @PostConstruct
     @Override
     public void reset() {
         smallest = 0;
-        guess =0;
+        guess = 0;
         remainingGuesses = guessCount;
         biggest = num.getMaxNumber();
         number = num.next();
-        log.debug("The number is {}", number);
     }
 
     @PreDestroy
@@ -43,10 +44,7 @@ public class GameI implements Game {
         log.info("in  Game predDstroy");
     }
 
-
     //public methods
-
-
     @Override
     public int getNumber() {
         return number;
@@ -75,6 +73,11 @@ public class GameI implements Game {
     @Override
     public int getRemainingGuesses() {
         return remainingGuesses;
+    }
+
+    @Override
+    public int getGuessCount() {
+        return guessCount;
     }
 
     @Override

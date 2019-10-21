@@ -1,10 +1,13 @@
-package learning.springfive;
+package learning.springfive.config;
 
+import learning.springfive.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 @Configuration
+@Import(GameConfig.class)
 @ComponentScan(basePackages = "learning.springfive")
 public class AppConfig {
 
@@ -23,5 +26,7 @@ public class AppConfig {
     public MessageGeneratorI messageGeneratorI() {
         return new MessageGenerator();
     }
+
+
 
 }
