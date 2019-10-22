@@ -8,6 +8,8 @@ public interface Game {
     int getsmallest();
     int getBiggest();
     int getRemainingGuesses();
+    int getGuessCount();
+
     void reset();
     void check();
     boolean isValidNumberRange();

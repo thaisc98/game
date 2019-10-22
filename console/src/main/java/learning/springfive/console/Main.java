@@ -1,6 +1,6 @@
-package academy.learnprogramming.console;
+package learning.springfive.console;
 
-import learning.springfive.AppConfig;
+import learning.springfive.config.AppConfig;
 import learning.springfive.Game;
 import learning.springfive.MessageGeneratorI;
 import learning.springfive.numberGenerator;
@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 
@@ -23,7 +22,6 @@ public class Main {
 
         /*ConfigurableApplicationContext context
                 = new ClassPathXmlApplicationContext(CONFIG_LOCATION);*/
-
         numberGenerator numG =
                 context.getBean("numberGenerator", numberGenerator.class);
 
@@ -33,12 +31,10 @@ public class Main {
          //get game  bean from context
         Game game = context.getBean(Game.class);
 
-
         //get message generator  bean from context
-        MessageGeneratorI msgG =  context
-                .getBean(MessageGeneratorI.class);
+        MessageGeneratorI msgG =  context.getBean(MessageGeneratorI.class);
             log.info("getMainMessage = {}", msgG.getMainMessage());
-            log.info("getResultMessage={}",msgG.getResultMessage());
+            log.info("getResultMessage = {}",msgG.getResultMessage());
         context.close();
 
 
